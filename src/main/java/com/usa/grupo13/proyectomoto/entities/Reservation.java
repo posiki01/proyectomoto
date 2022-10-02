@@ -16,9 +16,6 @@ public class Reservation implements Serializable {
 
     private String devolutionDate;
 
-    private String client;
-
-    private String motorbike;
 
     public Integer getId() {
         return id;
@@ -44,19 +41,5 @@ public class Reservation implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
-    public String getClient() {
-        return client;
-    }
 
-    public void setClient(String client) {
-        this.client = client;
-    }
-
-    public String getMotorbike() {
-        return motorbike;
-    }
-
-    public void setMotorbike(String motorbike) {
-        this.motorbike = motorbike;
-    }
 }
