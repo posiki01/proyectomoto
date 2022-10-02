@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.io.Serializable;
 @Entity
-@Table(name = "moto")
+@Table(name = "motorbike")
 public class Moto implements Serializable {
 
     @Id
@@ -19,7 +19,7 @@ public class Moto implements Serializable {
 
 
     @ManyToOne
-    // @JoinColumn(name = "categoryid")
+    @JoinColumn(name = "categoryid")
     @JsonIgnoreProperties("motorbikes")
     private Category category;
 
