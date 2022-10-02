@@ -42,12 +42,7 @@ public class ReservationService {
                 if(p.getDevolutionDate()!=null) {
                     q.get().setDevolutionDate(p.getDevolutionDate());
                 }
-                if(p.getClient()!=null) {
-                    q.get().setClient(p.getClient());
-                }
-                if(p.getMotorbike()!=null) {
-                    q.get().setMotorbike(p.getMotorbike());
-                }
+
                 reservationRepository.save(q.get());
                 return q.get();
             }else{
