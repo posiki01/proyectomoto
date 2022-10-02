@@ -20,7 +20,7 @@ public class CategoryService {
     public List<Category> getAll(){
         return categoryRepository.getAll();
     }
-    public Optional<Category> getMoto(int id){
+    public Optional<Category> getCategory(int id){
         return categoryRepository.getCategory(id);
     }
 

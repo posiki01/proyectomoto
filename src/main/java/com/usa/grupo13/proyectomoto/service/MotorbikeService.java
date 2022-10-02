@@ -1,8 +1,8 @@
 package com.usa.grupo13.proyectomoto.service;
 
 
-import com.usa.grupo13.proyectomoto.entities.Moto;
-import com.usa.grupo13.proyectomoto.repository.MotoRepository;
+import com.usa.grupo13.proyectomoto.entities.Motorbike;
+import com.usa.grupo13.proyectomoto.repository.MotorbikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,32 +10,33 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MotoService {
+public class MotorbikeService {
 
     @Autowired
-    private MotoRepository motoRepository;
+    private MotorbikeRepository motorbikeRepository;
 
-    public List<Moto> getAll(){return motoRepository.getAll();}
-    public Optional<Moto> getMoto(int id){
-        return motoRepository.getMoto(id);
+    public List<Motorbike> getAll()
+    {return motorbikeRepository.getAll();}
+    public Optional<Motorbike> getMotorbike(int id){
+        return motorbikeRepository.getMotorbike(id);
     }
 
-    public Moto save(Moto m){
+    public Motorbike save(Motorbike m){
         if(m.getId()==null){
-            return motoRepository.save(m);
+            return motorbikeRepository.save(m);
         }else{
-            Optional<Moto> e =motoRepository.getMoto(m.getId());
+            Optional<Motorbike> e = motorbikeRepository.getMotorbike(m.getId());
             if(e.isPresent()){
                 return m;
             }else{
-                return motoRepository.save(m);
+                return motorbikeRepository.save(m);
             }
         }
 
     }
-    public Moto update(Moto m){
+    public Motorbike update(Motorbike m){
         if(m.getId()!=null){
-            Optional<Moto> t =motoRepository.getMoto(m.getId());
+            Optional<Motorbike> t = motorbikeRepository.getMotorbike(m.getId());
             if(t.isPresent()) {
                 if (m.getName() != null) {
                     t.get().setName(m.getName());
@@ -52,7 +53,7 @@ public class MotoService {
                 if(m.getDescription()!=null){
                     t.get().setDescription(m.getDescription());
                 }
-                motoRepository.save(t.get());
+                motorbikeRepository.save(t.get());
                 return t.get();
 
             }else{
@@ -66,9 +67,9 @@ public class MotoService {
     }
     public boolean delete(int id){
         boolean flag=false;
-        Optional<Moto>m=motoRepository.getMoto(id);
+        Optional<Motorbike>m= motorbikeRepository.getMotorbike(id);
         if(m.isPresent()){
-            motoRepository.delete(m.get());
+            motorbikeRepository.delete(m.get());
             flag=true;
         }
 
