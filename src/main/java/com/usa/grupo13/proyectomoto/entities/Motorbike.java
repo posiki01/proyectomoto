@@ -1,12 +1,10 @@
 package com.usa.grupo13.proyectomoto.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Motorbike")
+@Table(name = "moto")
 public class Motorbike implements Serializable {
 
     @Id
@@ -17,10 +15,8 @@ public class Motorbike implements Serializable {
 
     private Integer year;
 
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("motorbikes")
-    private Category category;
+
+    private Integer category;
 
     private String name;
 
@@ -50,11 +46,11 @@ public class Motorbike implements Serializable {
         this.year = year;
     }
 
-    public Category getCategory() {
+    public Integer getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Integer category) {
         this.category = category;
     }
 
