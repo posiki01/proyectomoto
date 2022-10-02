@@ -15,9 +15,7 @@ public class MotoService {
     @Autowired
     private MotoRepository motoRepository;
 
-    public List<Moto> getAll(){
-        return motoRepository.getAll();
-    }
+    public List<Moto> getAll(){return motoRepository.getAll();}
     public Optional<Moto> getMoto(int id){
         return motoRepository.getMoto(id);
     }
