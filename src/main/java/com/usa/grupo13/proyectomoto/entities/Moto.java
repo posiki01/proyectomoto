@@ -15,10 +15,13 @@ public class Moto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
+
     private String name;
+
     private String brand;
-    @JoinColumn(name = "year")
+
     private Integer año;
 
     @ManyToOne
@@ -35,8 +38,17 @@ public class Moto implements Serializable {
     private List<Reservation> reservations;
 
     private String description;
+
     public Integer getId() {
         return id;
+    }
+
+    public Integer getAño() {
+        return año;
+    }
+
+    public void setAño(Integer año) {
+        this.año = año;
     }
 
     public void setId(Integer id) {
@@ -67,13 +79,8 @@ public class Moto implements Serializable {
         this.description = description;
     }
 
-    public Integer getAño() {
-        return año;
-    }
 
-    public void setAño(Integer año) {
-        año= año;
-    }
+
 
     public Category getCategory() {
         return category;
