@@ -2,8 +2,11 @@ package com.usa.grupo13.proyectomoto.entities;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -15,6 +18,12 @@ public class Category implements Serializable {
     private Integer id;
     private String name;
     private String description;
+
+
+
+
+
+
 
 
     public Integer getId() {
@@ -40,4 +49,9 @@ public class Category implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+
+
+
 }

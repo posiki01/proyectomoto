@@ -21,11 +21,11 @@ public class MotoRepository {
     public Optional<Moto> getMoto(int id){
         return motoCrudRepository.findById(id);
     }
-    public Moto save(Moto c){
-       return motoCrudRepository.save(c);
+    public Moto save(Moto m){
+       return motoCrudRepository.save(m);
     }
 
-    public void delete(Moto c){
-        motoCrudRepository.delete(c);
+    public void delete(Moto m){
+        motoCrudRepository.delete(m);
     }
 }

@@ -24,38 +24,38 @@ public class MotoService {
         return motoRepository.getMoto(id);
     }
 
-    public Moto save(Moto c){
-        if(c.getId()==null){
-            return motoRepository.save(c);
+    public Moto save(Moto m){
+        if(m.getId()==null){
+            return motoRepository.save(m);
         }else{
-            Optional<Moto> e = motoRepository.getMoto(c.getId());
+            Optional<Moto> e = motoRepository.getMoto(m.getId());
             if(e.isPresent()){
-                return c;
+                return m;
             }else{
-                return motoRepository.save(c);
+                return motoRepository.save(m);
             }
         }
 
     }
-    public Moto update(Moto c){
-        if(c.getId()!=null){
-            Optional<Moto> t = motoRepository.getMoto(c.getId());
-            if(t.isPresent()) {
-                if (c.getName() != null) {
-                    t.get().setName(c.getName());
+    public Moto update(Moto m){
+        if(m.getId()!=null){
+            Optional<Moto> x = motoRepository.getMoto(m.getId());
+            if(x.isPresent()){
+                if (m.getName() != null) {
+                    x.get().setName(m.getName());
                 }
-                if(c.getDescription()!=null){
-                    t.get().setDescription(c.getDescription());
+                if(m.getDescription()!=null){
+                    x.get().setDescription(m.getDescription());
                 }
-                motoRepository.save(t.get());
-                return t.get();
+                motoRepository.save(x.get());
+                return x.get();
 
             }else{
-                return c;
+                return m;
             }
 
         }else{
-            return c;
+            return m;
 
         }
     }
