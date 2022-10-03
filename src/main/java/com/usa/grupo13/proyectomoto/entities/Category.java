@@ -24,11 +24,13 @@ public class Category implements Serializable {
     private List<Moto> motorbikes;
 
 
+    public List<Moto> getMotorbikes() {
+        return motorbikes;
+    }
 
-
-
-
-
+    public void setMotorbikes(List<Moto> motorbikes) {
+        this.motorbikes = motorbikes;
+    }
 
     public Integer getId() {
         return id;
