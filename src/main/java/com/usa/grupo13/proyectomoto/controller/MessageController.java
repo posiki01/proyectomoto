@@ -4,6 +4,7 @@ package com.usa.grupo13.proyectomoto.controller;
 import com.usa.grupo13.proyectomoto.entities.Message;
 import com.usa.grupo13.proyectomoto.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class MessageController {
         return messageService.getAll();
     }
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message p){
         return messageService.save(p);
     }
