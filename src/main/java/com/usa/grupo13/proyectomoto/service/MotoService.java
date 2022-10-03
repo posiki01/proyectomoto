@@ -29,10 +29,10 @@ public class MotoService {
             return motoRepository.save(m);
         }else{
             Optional<Moto> e = motoRepository.getMoto(m.getId());
-            if(e.isEmpty()){
-                return motoRepository.save(m);
-            }else{
+            if(e.isPresent()){
                 return m;
+            }else{
+                return motoRepository.save(m);
             }
         }
 
