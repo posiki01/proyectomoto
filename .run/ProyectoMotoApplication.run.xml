@@ -7,6 +7,7 @@
       <option name="spring.boot.profiles" visible="false" />
     </selectedOptions>
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.usa.grupo13.proyectomoto.ProyectoMotoApplication" />
+    <option name="VM_PARAMETERS" value="-Dspring.profiles.active=diego" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

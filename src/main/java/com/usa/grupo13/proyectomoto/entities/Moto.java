@@ -19,7 +19,7 @@ public class Moto implements Serializable {
     private String name;
     private String brand;
     @JoinColumn(name = "year")
-    private Integer year;
+    private Integer año;
 
     @ManyToOne
     @JoinColumn(name="categoryId")
@@ -67,12 +67,12 @@ public class Moto implements Serializable {
         this.description = description;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getAño() {
+        return año;
     }
 
     public void setAño(Integer año) {
-        year = year;
+        año= año;
     }
 
     public Category getCategory() {
