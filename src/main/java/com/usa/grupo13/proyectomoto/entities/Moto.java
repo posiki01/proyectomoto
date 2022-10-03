@@ -3,23 +3,18 @@ package com.usa.grupo13.proyectomoto.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 
+
 @Entity
-@Table(name = "moto")
-public class Motorbike implements Serializable {
+@Table(name = "Motorbike")
+public class Moto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String brand;
-
     private Integer year;
-
-
-    private Integer category;
-
+    private String category;
     private String name;
-
     private String description;
 
     public Integer getId() {
@@ -46,11 +41,11 @@ public class Motorbike implements Serializable {
         this.year = year;
     }
 
-    public Integer getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
