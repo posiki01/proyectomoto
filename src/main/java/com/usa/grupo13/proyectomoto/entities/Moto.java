@@ -1,15 +1,13 @@
 package com.usa.grupo13.proyectomoto.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.jboss.logging.Messages;
 
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
-import java.text.DateFormat;
-import java.time.Year;
-import java.util.Date;
 
 @Entity
 @Table(name = "motorbike")
@@ -23,12 +21,20 @@ public class Moto implements Serializable {
     @JoinColumn(name = "year")
     private Integer Año;
 
-    private String description;
     @ManyToOne
-    //@JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("motorbikes")
+    @JoinColumn(name="categoryId")
+    @JsonIgnoreProperties({"motorbikes"})
     private Category category;
 
+    @OneToMany(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties("motorbikes, messages")
+    private List<Message> message;
+
+    @OneToMany(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties("motorbikes, reservations")
+    private List<Reservation> reservations;
+
+    private String description;
     public Integer getId() {
         return id;
     }
@@ -61,12 +67,7 @@ public class Moto implements Serializable {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
-    }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+
 
 }

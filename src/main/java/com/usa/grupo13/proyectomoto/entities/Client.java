@@ -1,7 +1,10 @@
 package com.usa.grupo13.proyectomoto.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -18,6 +21,14 @@ public class Client implements Serializable {
     private String password;
 
     private Integer age;
+
+    @OneToMany(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties("clients")
+    private List<Message> message;
+
+    @OneToMany(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties("Clients")
+    private List<Reservation> reservation;
 
     public Integer getId() {
         return id;
@@ -58,4 +69,13 @@ public class Client implements Serializable {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public List<Message> getMessage() {
+        return message;
+    }
+
+    public void setMessage(List<Message> message) {
+        this.message = message;
+    }
+
 }

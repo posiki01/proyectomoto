@@ -1,6 +1,8 @@
 package com.usa.grupo13.proyectomoto.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -16,7 +18,25 @@ public class Reservation implements Serializable {
 
     private String devolutionDate;
 
+    @ManyToOne
+    @JoinColumn(name="motorbikeId")
+    @JsonIgnoreProperties({"resevation"})
+    private Reservation reservation;
 
+    @ManyToOne
+    @JoinColumn(name="clientId")
+    @JsonIgnoreProperties({""})
+    private Client client;
+
+    @ManyToOne
+    @JoinColumn(name="CategoryId")
+    @JsonIgnoreProperties({""})
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name="messageId")
+    @JsonIgnoreProperties({""})
+    private Message message;
     public Integer getId() {
         return id;
     }
