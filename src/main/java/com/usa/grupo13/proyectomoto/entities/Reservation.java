@@ -61,5 +61,35 @@ public class Reservation implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
+    public Reservation getReservation() {
+        return reservation;
+    }
 
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
 }

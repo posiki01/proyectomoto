@@ -67,7 +67,35 @@ public class Moto implements Serializable {
         this.description = description;
     }
 
+    public Integer getAño() {
+        return Año;
+    }
 
+    public void setAño(Integer año) {
+        Año = año;
+    }
 
+    public Category getCategory() {
+        return category;
+    }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public List<Message> getMessage() {
+        return message;
+    }
+
+    public void setMessage(List<Message> message) {
+        this.message = message;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }

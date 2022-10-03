@@ -48,6 +48,29 @@ public class Message implements Serializable {
 
     }
 
+    public Moto getMoto() {
+        return moto;
+    }
+
+    public void setMoto(Moto moto) {
+        this.moto = moto;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 }
 
 

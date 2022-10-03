@@ -78,4 +78,11 @@ public class Client implements Serializable {
         this.message = message;
     }
 
+    public List<Reservation> getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(List<Reservation> reservation) {
+        this.reservation = reservation;
+    }
 }
