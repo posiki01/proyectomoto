@@ -1,7 +1,6 @@
 package com.usa.grupo13.proyectomoto.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.jboss.logging.Messages;
 
 
 import javax.persistence.*;
@@ -22,7 +21,7 @@ public class Moto implements Serializable {
 
     private String brand;
 
-    private Integer año;
+    private Integer year;
 
     @ManyToOne
     @JoinColumn(name="categoryId")
@@ -43,12 +42,12 @@ public class Moto implements Serializable {
         return id;
     }
 
-    public Integer getAño() {
-        return año;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setAño(Integer año) {
-        this.año = año;
+    public void setYear(Integer año) {
+        this.year = año;
     }
 
     public void setId(Integer id) {
