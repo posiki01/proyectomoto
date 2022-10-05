@@ -13,36 +13,31 @@ public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReservation;
     private String startDate;
 
     private String devolutionDate;
 
-    @ManyToOne
-    @JoinColumn(name="motorbikeId")
-    @JsonIgnoreProperties({"resevation"})
-    private Reservation reservation;
+    private String status;
 
     @ManyToOne
-    @JoinColumn(name="clientId")
-    @JsonIgnoreProperties({""})
+    //@JoinColumn(name="motorbike")
+    @JsonIgnoreProperties({"reservations"})
+    private Moto motorbike;
+
+    @ManyToOne
+    //@JoinColumn(name="clientId")
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
+    private  String score;
 
-    @ManyToOne
-    @JoinColumn(name="CategoryId")
-    @JsonIgnoreProperties({""})
-    private Category category;
 
-    @ManyToOne
-    @JoinColumn(name="messageId")
-    @JsonIgnoreProperties({""})
-    private Message message;
-    public Integer getId() {
-        return id;
+    public Integer getIdReservation() {
+        return idReservation;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
     public String getStartDate() {
@@ -61,13 +56,7 @@ public class Reservation implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
-    public Reservation getReservation() {
-        return reservation;
-    }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
-    }
 
     public Client getClient() {
         return client;
@@ -77,19 +66,27 @@ public class Reservation implements Serializable {
         this.client = client;
     }
 
-    public Category getCategory() {
-        return category;
+    public Moto getMotorbike() {
+        return motorbike;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setMotorbike(Moto motorbike) {
+        this.motorbike = motorbike;
     }
 
-    public Message getMessage() {
-        return message;
+    public String getScore() {
+        return score;
     }
 
-    public void setMessage(Message message) {
-        this.message = message;
+    public void setScore(String score) {
+        this.score = score;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

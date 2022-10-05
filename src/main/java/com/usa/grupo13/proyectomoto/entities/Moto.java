@@ -1,6 +1,7 @@
 package com.usa.grupo13.proyectomoto.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.jboss.logging.Messages;
 
 
 import javax.persistence.*;
@@ -22,21 +23,22 @@ public class Moto implements Serializable {
     private String brand;
 
     private Integer year;
+    private String description;
 
     @ManyToOne
-    @JoinColumn(name="categoryId")
+    //@JoinColumn(name="categoryId")
     @JsonIgnoreProperties({"motorbikes"})
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties("motorbikes, messages")
-    private List<Message> message;
+    @JsonIgnoreProperties("motorbike")
+    private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties("motorbikes, reservations")
+    @JsonIgnoreProperties({"motorbike"})
     private List<Reservation> reservations;
 
-    private String description;
+
 
     public Integer getId() {
         return id;
@@ -89,12 +91,12 @@ public class Moto implements Serializable {
         this.category = category;
     }
 
-    public List<Message> getMessage() {
-        return message;
+    public List<Message> getMessages() {
+        return messages;
     }
 
-    public void setMessage(List<Message> message) {
-        this.message = message;
+    public void setMessages(List<Message> message) {
+        this.messages = messages;
     }
 
     public List<Reservation> getReservations() {
@@ -104,4 +106,5 @@ public class Moto implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
 }

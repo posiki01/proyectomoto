@@ -14,27 +14,43 @@ public class ReservationService {
     @Autowired
     private ReservationRepository reservationRepository;
 
+
+
     public List<Reservation> getAll(){
         return reservationRepository.getAll();
     }
     public Optional<Reservation> getReservation(int id){
         return reservationRepository.getReservation(id);
     }
-    public Reservation save(Reservation p){
-        if(p.getId()==null){
+    public Reservation save(Reservation p) {
+
+        String  created = "created";
+        if (p.getIdReservation() == null) {
+            p.setStatus(created);
             return reservationRepository.save(p);
-        }else{
-            Optional<Reservation> e = reservationRepository.getReservation(p.getId());
-            if(e.isPresent()){
+        } else {
+            Optional<Reservation> e = reservationRepository.getReservation(p.getIdReservation());
+
+            if (e.isPresent()) {
                 return p;
-            }else{
+
+
+            }else {
+
                 return reservationRepository.save(p);
             }
         }
+
     }
+
+
+    private static String getCreate() {
+        return "created";
+    }
+
     public Reservation update(Reservation p){
-        if(p.getId()!=null){
-            Optional<Reservation> q = reservationRepository.getReservation(p.getId());
+        if(p.getIdReservation()!=null){
+            Optional<Reservation> q = reservationRepository.getReservation(p.getIdReservation());
             if(q.isPresent()){
                 if(p.getStartDate()!=null) {
                     q.get().setStartDate(p.getStartDate());
@@ -62,6 +78,9 @@ public class ReservationService {
         return flag;
 
     }
+
+
+
 }
 
 
