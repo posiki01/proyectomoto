@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "message")
+@Table(name = "messages")
 public class Message implements Serializable {
 
     @Id
@@ -18,21 +18,22 @@ public class Message implements Serializable {
     private String messageText;
 
     @ManyToOne
-    //@JoinColumn(name="motorbike")
-    @JsonIgnoreProperties({"messages","reservations"})
+    //@JoinColumn(name="messages")
+    @JsonIgnoreProperties({"motorbike","messages","reservations"})
     private Moto motorbike;
 
     @ManyToOne
-    //@JoinColumn(name="client")
-    @JsonIgnoreProperties({"messages","reservations"})
+   // @JoinColumn(name="messages")
+    @JsonIgnoreProperties({"Client","messages","reservations"})
     private Client client;
+
 
     public Integer getIdMessage() {
         return idMessage;
     }
 
-    public void setIdMessage(Integer idMessage) {
-        this.idMessage = idMessage;
+    public void setIdMessage(Integer id) {
+        this.idMessage = id;
     }
 
     public String getMessageText() {
@@ -41,18 +42,15 @@ public class Message implements Serializable {
 
     public void setMessageText(String messageText) {
         this.messageText = messageText;
-
     }
 
     public Moto getMotorbike() {
         return motorbike;
     }
 
-    public void setMotorbike(Moto moto) {
-        this.motorbike = moto;
+    public void setMotorbike(Moto motorbike) {
+        this.motorbike = motorbike;
     }
-
-
 
 
     public Client getClient() {
@@ -62,7 +60,6 @@ public class Message implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
-
 }
 
 

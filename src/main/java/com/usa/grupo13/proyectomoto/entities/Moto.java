@@ -1,7 +1,7 @@
 package com.usa.grupo13.proyectomoto.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.jboss.logging.Messages;
+
 
 
 import javax.persistence.*;
@@ -26,30 +26,21 @@ public class Moto implements Serializable {
     private String description;
 
     @ManyToOne
-    //@JoinColumn(name="categoryId")
+    //@JoinColumn(name="category")
     @JsonIgnoreProperties({"motorbikes"})
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties("motorbike")
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "motorbike")
+    @JsonIgnoreProperties({"messages","reservations","motorbike","client"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties({"motorbike"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "motorbike")
+    @JsonIgnoreProperties({"reservations","messages","motorbike","client"})
     private List<Reservation> reservations;
-
 
 
     public Integer getId() {
         return id;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer año) {
-        this.year = año;
     }
 
     public void setId(Integer id) {
@@ -72,6 +63,14 @@ public class Moto implements Serializable {
         this.brand = brand;
     }
 
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -79,9 +78,6 @@ public class Moto implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
 
     public Category getCategory() {
         return category;
@@ -95,7 +91,7 @@ public class Moto implements Serializable {
         return messages;
     }
 
-    public void setMessages(List<Message> message) {
+    public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
 
@@ -106,5 +102,4 @@ public class Moto implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
 }
