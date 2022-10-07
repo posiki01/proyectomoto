@@ -31,12 +31,12 @@ public class ClientController {
         return clientService.save(p);
     }
     @PutMapping("/update")
-    @ResponseStatus(HttpStatus.OK)
+    //@ResponseStatus(HttpStatus.OK)
     public Client update(@RequestBody Client client){
         return clientService.update(client);
     }
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    //@ResponseStatus(HttpStatus.OK)
     public boolean delete(@PathVariable("id") int clientId){
         return clientService.delete(clientId);
     }

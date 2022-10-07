@@ -31,12 +31,12 @@ public class ReservationController {
         return reservationService.save(p);
     }
     @PutMapping("/update")
-    @ResponseStatus(HttpStatus.OK)
+    //@ResponseStatus(HttpStatus.OK)
     public Reservation update(@RequestBody Reservation reservation){
         return reservationService.update(reservation);
     }
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    //@ResponseStatus(HttpStatus.OK)
     public boolean delete(@PathVariable("id") int reservationId){
         return reservationService.delete(reservationId);
     }
