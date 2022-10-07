@@ -44,8 +44,17 @@ public class MotoService {
                 if (m.getName() != null) {
                     x.get().setName(m.getName());
                 }
-                if(m.getDescription()!=null){
+                if (m.getBrand() != null) {
+                    x.get().setBrand(m.getBrand());
+                }
+                if(m.getDescription()!=null) {
                     x.get().setDescription(m.getDescription());
+                }
+                if (m.getYear() != null) {
+                    x.get().setYear(m.getYear());
+                }
+                if(m.getCategory()!=null) {
+                    x.get().setCategory(m.getCategory());
                 }
                 motoRepository.save(x.get());
                 return x.get();
