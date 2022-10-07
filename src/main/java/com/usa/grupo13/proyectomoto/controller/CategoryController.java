@@ -38,8 +38,5 @@ public class CategoryController {
     public boolean delete(@PathVariable("id") int categoryId){
        return categoryService.delete(categoryId);
     }
-
-
-
 }
 
