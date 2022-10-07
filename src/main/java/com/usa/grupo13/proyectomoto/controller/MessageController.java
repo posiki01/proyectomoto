@@ -1,7 +1,6 @@
 package com.usa.grupo13.proyectomoto.controller;
 
 
-import com.usa.grupo13.proyectomoto.entities.Client;
 import com.usa.grupo13.proyectomoto.entities.Message;
 import com.usa.grupo13.proyectomoto.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;

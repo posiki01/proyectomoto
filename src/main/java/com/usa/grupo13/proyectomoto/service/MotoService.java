@@ -41,6 +41,9 @@ public class MotoService {
         if(m.getId()!=null){
             Optional<Moto> x = motoRepository.getMoto(m.getId());
             if(x.isPresent()){
+                if (m.getId() != null) {
+                    x.get().setId(m.getId());
+                }
                 if (m.getName() != null) {
                     x.get().setName(m.getName());
                 }

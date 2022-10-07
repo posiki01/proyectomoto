@@ -41,11 +41,17 @@ public class CategoryService {
         if(c.getId()!=null){
             Optional<Category> t =categoryRepository.getCategory(c.getId());
             if(t.isPresent()) {
+                if (c.getId() != null) {
+                    t.get().setId(c.getId());
+                }
                 if (c.getName() != null) {
                     t.get().setName(c.getName());
                 }
                 if(c.getDescription()!=null){
                     t.get().setDescription(c.getDescription());
+                }
+                if(c.getMotorbikes()!=null) {
+                    t.get().setMotorbikes(c.getMotorbikes());
                 }
                 categoryRepository.save(t.get());
                 return t.get();
