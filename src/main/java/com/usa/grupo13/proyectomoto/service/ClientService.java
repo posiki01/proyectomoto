@@ -1,6 +1,5 @@
 package com.usa.grupo13.proyectomoto.service;
 
-
 import com.usa.grupo13.proyectomoto.entities.Client;
 import com.usa.grupo13.proyectomoto.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import java.util.Optional;
 
 @Service
 public class ClientService {
-
     @Autowired
     private ClientRepository clientRepository;
 
@@ -66,7 +64,6 @@ public class ClientService {
             flag=true;
         }
         return flag;
-
     }
 }
 

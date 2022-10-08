@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "messages")
 public class Message implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
@@ -26,7 +25,6 @@ public class Message implements Serializable {
    // @JoinColumn(name="messages")
     @JsonIgnoreProperties({"Client","messages","reservations"})
     private Client client;
-
 
     public Integer getIdMessage() {
         return idMessage;
@@ -51,7 +49,6 @@ public class Message implements Serializable {
     public void setMotorbike(Moto motorbike) {
         this.motorbike = motorbike;
     }
-
 
     public Client getClient() {
         return client;

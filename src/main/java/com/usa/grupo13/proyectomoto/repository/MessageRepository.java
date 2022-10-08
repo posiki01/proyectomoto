@@ -10,10 +10,8 @@ import java.util.Optional;
 
 @Repository
 public class MessageRepository {
-
     @Autowired
     private MessageCrudRepository messageCrudRepository;
-
     public List<Message> getAll(){
         return (List<Message>) messageCrudRepository.findAll();
     }

@@ -1,7 +1,5 @@
 package com.usa.grupo13.proyectomoto.service;
 
-
-
 import com.usa.grupo13.proyectomoto.entities.Category;
 import com.usa.grupo13.proyectomoto.repository.CategoryRepository;
 
@@ -13,10 +11,8 @@ import java.util.Optional;
 
 @Service
 public class CategoryService {
-
     @Autowired
     private CategoryRepository categoryRepository;
-
     public List<Category> getAll(){
         return categoryRepository.getAll();
     }
@@ -66,8 +62,6 @@ public class CategoryService {
             categoryRepository.delete(m.get());
             flag=true;
         }
-
         return flag;
     }
-
 }

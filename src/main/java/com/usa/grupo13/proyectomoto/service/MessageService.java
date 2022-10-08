@@ -1,6 +1,5 @@
 package com.usa.grupo13.proyectomoto.service;
 
-
 import com.usa.grupo13.proyectomoto.entities.Message;
 import com.usa.grupo13.proyectomoto.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import java.util.Optional;
 
 @Service
 public class MessageService {
-
     @Autowired
     private MessageRepository messageRepository;
 
@@ -57,7 +55,6 @@ public class MessageService {
             flag=true;
         }
         return flag;
-
     }
 }
 

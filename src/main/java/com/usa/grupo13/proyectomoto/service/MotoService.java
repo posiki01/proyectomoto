@@ -1,8 +1,5 @@
 package com.usa.grupo13.proyectomoto.service;
 
-
-
-
 import com.usa.grupo13.proyectomoto.entities.Moto;
 import com.usa.grupo13.proyectomoto.repository.MotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,6 @@ import java.util.Optional;
 
 @Service
 public class MotoService {
-
     @Autowired
     private MotoRepository motoRepository;
 
@@ -62,10 +58,8 @@ public class MotoService {
             }else{
                 return m;
             }
-
         }else{
             return m;
-
         }
     }
     public boolean delete(int id){
@@ -75,8 +69,6 @@ public class MotoService {
             motoRepository.delete(m.get());
             flag=true;
         }
-
         return flag;
     }
-
 }

@@ -10,21 +10,17 @@ import java.util.Optional;
 
 @Repository
 public class MotoRepository {
-
     @Autowired
     private MotoCrudRepository motoCrudRepository;
-
     public List<Moto> getAll(){
         return(List<Moto>) motoCrudRepository.findAll();
     }
-
     public Optional<Moto> getMoto(int id){
         return motoCrudRepository.findById(id);
     }
     public Moto save(Moto m){
        return motoCrudRepository.save(m);
     }
-
     public void delete(Moto m){
         motoCrudRepository.delete(m);
     }

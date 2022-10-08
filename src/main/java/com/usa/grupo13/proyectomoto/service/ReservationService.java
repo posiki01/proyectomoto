@@ -7,13 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class ReservationService {
-
     @Autowired
     private ReservationRepository reservationRepository;
-
 
 
     public List<Reservation> getAll(){
@@ -23,7 +20,6 @@ public class ReservationService {
         return reservationRepository.getReservation(id);
     }
     public Reservation save(Reservation p) {
-
         String  created = "created";
         if (p.getIdReservation() == null) {
             p.setStatus(created);
@@ -37,11 +33,7 @@ public class ReservationService {
                 return reservationRepository.save(p);
             }
         }
-
     }
-
-
-
 
 
     public Reservation update(Reservation p){
@@ -72,11 +64,7 @@ public class ReservationService {
             flag=true;
         }
         return flag;
-
     }
-
-
-
 }
 
 
