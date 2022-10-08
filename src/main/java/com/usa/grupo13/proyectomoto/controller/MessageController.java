@@ -1,7 +1,6 @@
 package com.usa.grupo13.proyectomoto.controller;
 
 
-import com.usa.grupo13.proyectomoto.entities.Client;
 import com.usa.grupo13.proyectomoto.entities.Message;
 import com.usa.grupo13.proyectomoto.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +29,15 @@ public class MessageController {
     @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message p){
         return messageService.save(p);
+    }
+    @PutMapping("/update")
+    //@ResponseStatus(HttpStatus.OK)
+    public Message update(@RequestBody Message message){
+        return messageService.update(message);
+    }
+    @DeleteMapping("/{id}")
+    //@ResponseStatus(HttpStatus.OK)
+    public boolean delete(@PathVariable("id") int messageId){
+        return messageService.delete(messageId);
     }
 }

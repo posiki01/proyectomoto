@@ -1,7 +1,6 @@
 package com.usa.grupo13.proyectomoto.controller;
 
 
-import com.usa.grupo13.proyectomoto.entities.Category;
 import com.usa.grupo13.proyectomoto.entities.Client;
 import com.usa.grupo13.proyectomoto.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class ClientController {
         return clientService.getAll();
     }
     @GetMapping("/{id}")
-    public Optional<Client> getCategory(@PathVariable("id") int clientId) {
+    public Optional<Client> getClient(@PathVariable("id") int clientId) {
         return clientService.getClient(clientId);
     }
     @PostMapping("/save")
@@ -32,10 +31,12 @@ public class ClientController {
         return clientService.save(p);
     }
     @PutMapping("/update")
+    //@ResponseStatus(HttpStatus.OK)
     public Client update(@RequestBody Client client){
         return clientService.update(client);
     }
     @DeleteMapping("/{id}")
+    //@ResponseStatus(HttpStatus.OK)
     public boolean delete(@PathVariable("id") int clientId){
         return clientService.delete(clientId);
     }

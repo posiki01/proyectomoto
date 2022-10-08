@@ -1,7 +1,6 @@
 package com.usa.grupo13.proyectomoto.controller;
 
 
-import com.usa.grupo13.proyectomoto.entities.Moto;
 import com.usa.grupo13.proyectomoto.entities.Reservation;
 import com.usa.grupo13.proyectomoto.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +31,12 @@ public class ReservationController {
         return reservationService.save(p);
     }
     @PutMapping("/update")
+    //@ResponseStatus(HttpStatus.OK)
     public Reservation update(@RequestBody Reservation reservation){
         return reservationService.update(reservation);
     }
     @DeleteMapping("/{id}")
+    //@ResponseStatus(HttpStatus.OK)
     public boolean delete(@PathVariable("id") int reservationId){
         return reservationService.delete(reservationId);
     }

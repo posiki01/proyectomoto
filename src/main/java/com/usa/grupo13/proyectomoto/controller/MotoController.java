@@ -1,8 +1,5 @@
 package com.usa.grupo13.proyectomoto.controller;
 
-
-import com.usa.grupo13.proyectomoto.entities.Client;
-import com.usa.grupo13.proyectomoto.entities.Message;
 import com.usa.grupo13.proyectomoto.entities.Moto;
 import com.usa.grupo13.proyectomoto.service.MotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +32,12 @@ public class MotoController {
         return motoService.save(c);
     }
     @PutMapping("/update")
+    //@ResponseStatus(HttpStatus.OK)
     public Moto update(@RequestBody Moto moto){
         return motoService.update(moto);
     }
     @DeleteMapping("/{id}")
+    //@ResponseStatus(HttpStatus.OK)
     public boolean delete(@PathVariable("id") int motoId){
         return motoService.delete(motoId);
     }

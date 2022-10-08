@@ -34,12 +34,14 @@ public class ReservationService {
             }
         }
     }
-
-
+    
     public Reservation update(Reservation p){
         if(p.getIdReservation()!=null){
             Optional<Reservation> q = reservationRepository.getReservation(p.getIdReservation());
             if(q.isPresent()){
+                if(p.getIdReservation()!=null) {
+                    q.get().setIdReservation(p.getIdReservation());
+                }
                 if(p.getStartDate()!=null) {
                     q.get().setStartDate(p.getStartDate());
                 }
