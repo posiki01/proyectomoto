@@ -20,6 +20,9 @@ public class CategoryController {
 
 
     @GetMapping("/all")
+    @PostMapping("/all")
+    @PutMapping("/all")
+    @DeleteMapping("/all")
     public List<Category> getAll(){
         return categoryService.getAll();
     }
@@ -32,6 +35,6 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.CREATED)
     public Category update(@RequestBody Category category){return categoryService.update(category);}
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int categoryId){return categoryService.delete(categoryId);}
 }
