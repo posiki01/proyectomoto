@@ -1,6 +1,5 @@
 package com.usa.grupo13.proyectomoto.controller;
 
-
 import com.usa.grupo13.proyectomoto.entities.Category;
 import com.usa.grupo13.proyectomoto.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/Category")
 public class CategoryController {
-
-
     @Autowired
     private CategoryService categoryService;
 
