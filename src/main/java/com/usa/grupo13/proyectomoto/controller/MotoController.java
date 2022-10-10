@@ -31,12 +31,12 @@ public class MotoController {
         return motoService.save(c);
     }
     @PutMapping("/update")
-    //@ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public Moto update(@RequestBody Moto moto){
         return motoService.update(moto);
     }
     @DeleteMapping("/{id}")
-    //@ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int motoId){
         return motoService.delete(motoId);
     }
