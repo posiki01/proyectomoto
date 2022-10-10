@@ -31,12 +31,12 @@ public class MessageController {
         return messageService.save(p);
     }
     @PutMapping("/update")
-    //@ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public Message update(@RequestBody Message message){
         return messageService.update(message);
     }
     @DeleteMapping("/{id}")
-    //@ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public boolean delete(@PathVariable("id") int messageId){
         return messageService.delete(messageId);
     }
