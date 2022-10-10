@@ -37,7 +37,7 @@ public class MotoController {
         return motoService.update(moto);
     }
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int motoId){
         return motoService.delete(motoId);
     }
