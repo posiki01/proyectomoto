@@ -26,7 +26,7 @@ public class Moto implements Serializable {
     private String description;
 
     @ManyToOne
-    //@JoinColumn(name="category")
+    @JoinColumn(name="category")
     @JsonIgnoreProperties({"motorbikes","category"})
     private Category category;
 
