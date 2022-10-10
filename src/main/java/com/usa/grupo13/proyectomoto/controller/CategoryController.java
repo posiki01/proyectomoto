@@ -20,9 +20,6 @@ public class CategoryController {
 
 
     @GetMapping("/all")
-    @PostMapping("/all")
-    @PutMapping("/all")
-    @DeleteMapping("/all")
     public List<Category> getAll(){
         return categoryService.getAll();
     }
