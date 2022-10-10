@@ -27,8 +27,8 @@ public class MessageController {
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save(@RequestBody Message p){
-        return messageService.save(p);
+    public Message save(@RequestBody Message message){
+        return messageService.save(message);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)

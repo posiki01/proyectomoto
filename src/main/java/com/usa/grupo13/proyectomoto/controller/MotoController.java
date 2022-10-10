@@ -28,8 +28,8 @@ public class MotoController {
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Moto save(@RequestBody Moto c) {
-        return motoService.save(c);
+    public Moto save(@RequestBody Moto moto) {
+        return motoService.save(moto);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)

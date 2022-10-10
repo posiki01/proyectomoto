@@ -27,7 +27,7 @@ public class CategoryController {
     public Optional<Category> getCategory(@PathVariable("id") int categoryId) {return categoryService.getCategory(categoryId);}
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category save(@RequestBody Category c) {return categoryService.save(c);}
+    public Category save(@RequestBody Category category) {return categoryService.save(category);}
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Category update(@RequestBody Category category){return categoryService.update(category);}
