@@ -32,8 +32,7 @@ public class ReservationService {
 
 
         if (p.getIdReservation() == null) {
-        }
-        if(p.getStatus()==null) {
+        
 
 
 
