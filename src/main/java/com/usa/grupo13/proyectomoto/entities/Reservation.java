@@ -21,14 +21,19 @@ public class Reservation implements Serializable {
 
 
     @ManyToOne
-    @JoinColumn(name="id")
+    //@JoinColumn(name="id")
     @JsonIgnoreProperties({"reservations"})
     private Moto motorbike;
 
     @ManyToOne
-    @JoinColumn(name="idClient")
+    //@JoinColumn(name="idClient")
     @JsonIgnoreProperties({"reservations", "messages","client"})
     private Client client;
+
+
+
+
+
 
     private String score;
 
