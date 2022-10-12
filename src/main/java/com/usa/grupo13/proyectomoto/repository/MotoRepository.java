@@ -24,4 +24,5 @@ public class MotoRepository {
     public void delete(Moto m){
         motoCrudRepository.delete(m);
     }
+
 }

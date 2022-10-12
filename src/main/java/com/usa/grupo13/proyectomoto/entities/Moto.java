@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,13 +17,11 @@ public class Moto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
-
     private String name;
-
     private String brand;
-
     private Integer year;
     private String description;
+    private Date startDate;
 
     @ManyToOne
     //@JoinColumn(name="category")
@@ -100,5 +99,13 @@ public class Moto implements Serializable {
 
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 }
