@@ -34,7 +34,7 @@ public class ClientService {
     public Client update(Client p){
         if(p.getIdClient()!=null){
             Optional<Client> q = clientRepository.getClient(p.getIdClient());
-            if(q.isPresent()){
+            if(!q.isEmpty()){
                 if(p.getIdClient()!=null) {
                     q.get().setIdClient(p.getIdClient());
                 }
@@ -50,8 +50,6 @@ public class ClientService {
                 if(p.getAge()!=null) {
                     q.get().setAge(p.getAge());
                 }
-
-
                     clientRepository.save(q.get());
                 return q.get();
             }else{

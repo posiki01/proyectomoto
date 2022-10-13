@@ -19,12 +19,13 @@ public class Moto implements Serializable {
     private Integer id;
     private String name;
     private String brand;
+    @Column(name="years")
     private Integer year;
     private String description;
-    private Date startDate;
+    //private Date startDate;
 
     @ManyToOne
-    //@JoinColumn(name="categoryId")
+    @JoinColumn(name="categoryId")
     @JsonIgnoreProperties({"motorbikes","category"})
     private Category category;
 
@@ -101,11 +102,4 @@ public class Moto implements Serializable {
         this.reservations = reservations;
     }
 
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
 }
