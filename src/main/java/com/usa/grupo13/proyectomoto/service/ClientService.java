@@ -34,7 +34,7 @@ public class ClientService {
     public Client update(Client p){
         if(p.getIdClient()!=null){
             Optional<Client> q = clientRepository.getClient(p.getIdClient());
-            if(!q.isEmpty()){
+            if(q.isPresent()){
                 if(p.getIdClient()!=null) {
                     q.get().setIdClient(p.getIdClient());
                 }
